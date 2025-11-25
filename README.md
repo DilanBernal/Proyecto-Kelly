@@ -1,30 +1,115 @@
-# Urban Report App
+# Urbana Reporta - App Móvil
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Aplicación móvil para reportar problemas urbanos alineada con el ODS 11 (Ciudades y Comunidades Sostenibles).
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/arciniegasrodriguezkenethsteve-5857s-projects/v0-urban-report-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/e4FMvtgd6BA)
+## Versiones Disponibles
 
-## Overview
+### Web App (Next.js)
+- Desplegada en Vercel: [https://vercel.com/arciniegasrodriguezkenethsteve-5857s-projects/v0-urban-report-app](https://vercel.com/arciniegasrodriguezkenethsteve-5857s-projects/v0-urban-report-app)
+- Construida con v0: [https://v0.app/chat/e4FMvtgd6BA](https://v0.app/chat/e4FMvtgd6BA)
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### React Native con Expo (Para móviles)
+Los archivos de React Native están listos para ser copiados a un nuevo proyecto Expo.
 
-## Deployment
+## Instalación para Expo Go
 
-Your project is live at:
+1. Descarga e instala Expo Go en tu celular:
+   - [iOS App Store](https://apps.apple.com/app/expo-go/id982107779)
+   - [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
 
-**[https://vercel.com/arciniegasrodriguezkenethsteve-5857s-projects/v0-urban-report-app](https://vercel.com/arciniegasrodriguezkenethsteve-5857s-projects/v0-urban-report-app)**
+2. En tu computadora, crea un nuevo proyecto:
+\`\`\`bash
+npx create-expo-app urbana-reporta
+cd urbana-reporta
+\`\`\`
 
-## Build your app
+3. Copia todos los archivos del proyecto a tu nueva carpeta
 
-Continue building your app on:
+4. Instala las dependencias:
+\`\`\`bash
+npm install
+\`\`\`
 
-**[https://v0.app/chat/e4FMvtgd6BA](https://v0.app/chat/e4FMvtgd6BA)**
+5. Inicia el servidor de desarrollo:
+\`\`\`bash
+npx expo start
+\`\`\`
 
-## How It Works
+6. Escanea el código QR con Expo Go en tu celular
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Estructura del Proyecto
+
+\`\`\`
+app/
+├── _layout.tsx          # Layout principal
+├── index.tsx            # Pantalla de bienvenida
+├── (user)/              # Rutas de usuario
+│   ├── home.tsx         # Pantalla principal
+│   ├── create-report.tsx # Crear reportes
+│   ├── reports.tsx      # Historial
+│   └── profile.tsx      # Perfil
+└── (admin)/             # Rutas de administrador
+    ├── dashboard.tsx    # Panel principal
+    ├── reports.tsx      # Gestionar reportes
+    ├── users.tsx        # Gestionar usuarios
+    └── settings.tsx     # Configuración
+\`\`\`
+
+## Características
+
+- Geolocalización con expo-location
+- Cámara y galería con expo-image-picker
+- Mapas con react-native-maps
+- Almacenamiento local con AsyncStorage
+- Navegación con Expo Router
+- Interfaz nativa optimizada para móviles
+
+## Credenciales de Prueba
+
+**Usuario:**
+- Email: usuario@urbana.com
+- Password: usuario123
+
+**Admin:**
+- Email: admin@urbana.com
+- Password: admin123
+
+## Funcionalidades
+
+### Usuario
+- Crear reportes con geolocalización
+- Subir fotos de evidencia
+- Ver historial de reportes
+- Seguimiento en tiempo real
+- Mapa interactivo de reportes
+
+### Administrador
+- Dashboard con estadísticas
+- Gestionar reportes
+- Cambiar estados de reportes
+- Ver usuarios registrados
+- Mapa de calor con zonas críticas
+
+## Tecnologías
+
+- React Native
+- Expo SDK 52
+- Expo Router
+- TypeScript
+- Expo Location
+- Expo Image Picker
+- React Native Maps
+- AsyncStorage
+
+## Pasos Siguientes
+
+1. Descarga el código del proyecto
+2. Copia los archivos a un nuevo proyecto Expo
+3. Instala las dependencias
+4. Ejecuta `npx expo start`
+5. Escanea el código QR con Expo Go
+6. Prueba la aplicación en tu celular
+
+## Soporte
+
+Para continuar desarrollando, visita: [https://v0.app/chat/e4FMvtgd6BA](https://v0.app/chat/e4FMvtgd6BA)
