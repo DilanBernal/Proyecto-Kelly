@@ -21,8 +21,11 @@
     "@react-navigation/drawer": "latest",
     "@testing-library/react-native": "latest",
     "@vercel/analytics": "latest",
+    "bcryptjs": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cors": "latest",
+    "dotenv": "latest",
     "expo": "~52.0.0",
     "expo-constants": "~17.0.3",
     "expo-font": "~13.0.1",
@@ -31,10 +34,14 @@
     "expo-location": "latest",
     "expo-router": "latest",
     "expo-status-bar": "latest",
+    "express": "latest",
+    "jsonwebtoken": "latest",
     "lucide-react": "^0.454.0",
     "lucide-react-native": "latest",
     "next": "16.0.4",
     "next-themes": "latest",
+    "pg": "latest",
+    "pg-native": "latest",
     "react": "18.3.1",
     "react-dom": "19.2.0",
     "react-native": "latest",
@@ -48,7 +55,8 @@
     "react-server-dom-webpack": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "tw-animate-css": "latest"
+    "tw-animate-css": "latest",
+    "uuid": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -58,5 +66,8 @@
     "postcss": "^8.5",
     "tailwindcss": "4.1.17",
     "typescript": "^5"
-  }
+  },
+  "trustedDependencies": [
+    "pg-native"
+  ]
 }

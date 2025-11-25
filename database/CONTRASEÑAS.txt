@@ -1,0 +1,32 @@
+CREDENCIALES DE ACCESO - App Urbana Reporta
+============================================
+
+⚠️ IMPORTANTE: Estas son las contraseñas SIN HASHEAR para pruebas.
+En la base de datos se guardan hasheadas con bcrypt.
+
+USUARIOS DE PRUEBA:
+-------------------
+
+👤 USUARIO NORMAL:
+Email: usuario@urbana.com
+Password: usuario123
+
+👨‍💼 ADMINISTRADOR:
+Email: admin@urbana.com
+Password: admin123
+
+🧑 USUARIO ADICIONAL 1:
+Email: juan@example.com
+Password: usuario123
+
+👩 USUARIO ADICIONAL 2:
+Email: maria@example.com
+Password: usuario123
+
+============================================
+
+NOTA: El backend automáticamente hashea las contraseñas
+con bcrypt al momento de registrar o autenticar usuarios.
+
+Las contraseñas en la base de datos NO se pueden leer
+directamente, solo se pueden verificar.

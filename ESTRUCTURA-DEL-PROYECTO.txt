@@ -1,0 +1,131 @@
+📂 Urban-Report-App/
+│
+├── 📂 admin-web/                          # APLICACIÓN WEB PARA ADMINISTRADORES (Next.js)
+│   ├── 📂 app/
+│   │   ├── 📂 admin/
+│   │   │   ├── 📂 dashboard/             # Dashboard principal del admin
+│   │   │   ├── 📂 reports/               # Gestión de reportes
+│   │   │   ├── 📂 users/                 # Gestión de usuarios
+│   │   │   ├── 📂 map/                   # Mapa de calor
+│   │   │   ├── 📂 settings/              # Configuración del sistema
+│   │   │   └── login/                    # Login de administrador
+│   │   ├── layout.tsx                    # Layout principal
+│   │   └── globals.css                   # Estilos globales
+│   ├── 📂 components/                    # Componentes React compartidos
+│   ├── 📂 lib/                          # Utilidades
+│   ├── .env.local                        # Variables de entorno (CREAR ESTE ARCHIVO)
+│   ├── package.json
+│   └── README.md
+│
+├── 📂 mobile-user/                        # APLICACIÓN MÓVIL PARA USUARIOS (Expo React Native)
+│   ├── 📂 app/
+│   │   ├── 📂 (user)/
+│   │   │   ├── home.tsx                  # Pantalla principal
+│   │   │   ├── create-report.tsx         # Crear reporte
+│   │   │   ├── reports.tsx               # Historial de reportes
+│   │   │   └── profile.tsx               # Perfil de usuario
+│   │   ├── 📂 auth/
+│   │   │   ├── login.tsx                 # Login
+│   │   │   └── register.tsx              # Registro
+│   │   ├── _layout.tsx
+│   │   └── index.tsx                     # Pantalla de bienvenida
+│   ├── 📂 components/                    # Componentes React Native
+│   ├── 📂 config/
+│   │   └── api.ts                        # Configuración del API (EDITAR ESTE ARCHIVO)
+│   ├── 📂 services/                      # Servicios para llamar al backend
+│   ├── app.json
+│   ├── package.json
+│   └── README.md
+│
+├── 📂 backend/                            # BACKEND API (Node.js + Express + TypeScript)
+│   ├── 📂 src/
+│   │   ├── 📂 domain/                    # CAPA DE DOMINIO (Hexagonal)
+│   │   │   ├── 📂 entities/             # Entidades del negocio
+│   │   │   │   ├── User.ts
+│   │   │   │   ├── Report.ts
+│   │   │   │   └── Comment.ts
+│   │   │   └── 📂 ports/                # Interfaces (Puertos)
+│   │   │       ├── IUserRepository.ts
+│   │   │       ├── IReportRepository.ts
+│   │   │       └── IAuthService.ts
+│   │   │
+│   │   ├── 📂 application/               # CAPA DE APLICACIÓN
+│   │   │   └── 📂 usecases/             # Casos de uso del negocio
+│   │   │       ├── 📂 auth/
+│   │   │       │   ├── LoginUseCase.ts
+│   │   │       │   └── RegisterUseCase.ts
+│   │   │       └── 📂 reports/
+│   │   │           ├── CreateReportUseCase.ts
+│   │   │           ├── GetReportsUseCase.ts
+│   │   │           └── UpdateReportUseCase.ts
+│   │   │
+│   │   └── 📂 infrastructure/            # CAPA DE INFRAESTRUCTURA (Adaptadores)
+│   │       ├── 📂 database/
+│   │       │   └── connection.ts         # Conexión a PostgreSQL
+│   │       ├── 📂 repositories/          # Implementación de repositorios
+│   │       │   ├── PostgresUserRepository.ts
+│   │       │   ├── PostgresReportRepository.ts
+│   │       │   └── PostgresCommentRepository.ts
+│   │       ├── 📂 adapters/
+│   │       │   └── AuthService.ts        # JWT y bcrypt
+│   │       └── 📂 http/
+│   │           ├── 📂 routes/           # Rutas de la API
+│   │           │   ├── authRoutes.ts
+│   │           │   ├── reportRoutes.ts
+│   │           │   └── userRoutes.ts
+│   │           ├── 📂 middleware/
+│   │           │   └── authMiddleware.ts
+│   │           └── server.ts            # Servidor Express
+│   ├── .env                              # Variables de entorno (CREAR ESTE ARCHIVO)
+│   ├── .env.example                      # Ejemplo de variables de entorno
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+│
+├── 📂 database/                           # SCRIPTS DE BASE DE DATOS
+│   ├── schema.sql                        # Script completo de la BD (EJECUTAR EN pgAdmin)
+│   └── CONTRASEÑAS.txt                   # Credenciales de prueba
+│
+├── GUIA-COMPLETA-INSTALACION.md          # 📖 GUÍA PASO A PASO (LEER PRIMERO)
+└── ESTRUCTURA-DEL-PROYECTO.txt           # 📋 Este archivo
+
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 ORDEN DE EJECUCIÓN:
+
+1️⃣ BASE DE DATOS (PostgreSQL)
+   └── Ejecutar: database/schema.sql en pgAdmin 4
+
+2️⃣ BACKEND (API)
+   ├── cd backend
+   ├── npm install
+   ├── Crear archivo .env (copiar de .env.example)
+   └── npm run dev
+
+3️⃣ ADMIN WEB (Next.js)
+   ├── cd admin-web
+   ├── npm install
+   ├── Crear archivo .env.local
+   └── npm run dev
+
+4️⃣ MOBILE USER (Expo)
+   ├── cd mobile-user
+   ├── npm install
+   ├── Editar config/api.ts con tu IP
+   └── npx expo start
+
+═══════════════════════════════════════════════════════════════════════
+
+📱 ACCESOS:
+
+ADMIN WEB: http://localhost:3000/admin/login
+   └── admin@urbana.com / Admin123!
+
+MOBILE APP: Escanear QR con Expo Go
+   └── juan@example.com / Usuario123!
+
+API: http://localhost:3001
+   └── Documentación en backend/README.md
+
+═══════════════════════════════════════════════════════════════════════
